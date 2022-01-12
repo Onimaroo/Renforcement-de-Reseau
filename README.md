@@ -8,19 +8,19 @@ Il faut éxécuter le fichier `ameliorations.py`, qui va dépendre du script `gr
 ## Options
 Pour mener à bien l'éxécution du fichier `ameliorations.py`, il faut aussi ajouter des options en argument dans la ligne de commande:
 
-`--metro [lignes]` : précise les lignes de métro que l’on veut charger dans le réseau. Le paramètre `lignes` est facultatif : s’il existe, il s’agit des numéros de lignes qui nous intéressent (par exemple : --metro 3b 7 14) ; sinon, on charge toutes les lignes de métro disponibles dans le répertoire courant.
+`--metro [lignes]` : Précise les lignes de métro que l’on veut charger dans le réseau. Le paramètre `lignes` est facultatif : s’il existe, il s’agit des numéros de lignes qui nous intéressent (par exemple : --metro 3b 7 14) ; sinon, on charge toutes les lignes de métro disponibles dans le répertoire courant.
 
 `--rer [lignes]` : cf. `--metro`, mais pour les lignes de RER.
 
-`--liste-stations` : affiche la liste des stations du réseau avec leur identifiant triées par ordre alphabétique.
+`--liste-stations` : Affiche la liste des stations du réseau avec leur identifiant triées par ordre alphabétique.
 
-`--articulations` : affiche les points d’articulation du réseau qui a été chargé.
+`--articulations` : Affiche les points d’articulation du réseau qui a été chargé.
 
-`--ponts` : affiche les ponts du réseau qui a été chargé.
+`--ponts` : Affiche les ponts du réseau qui a été chargé.
 
-`--ameliorer-articulations` : affiche les points d’articulation du réseau qui a été chargé, ainsi que les arêtes à rajouter pour que ces stations ne soient plus des points d’articulation.
+`--ameliorer-articulations` : Affiche les points d’articulation du réseau qui a été chargé, ainsi que les arêtes à rajouter pour que ces stations ne soient plus des points d’articulation.
 
-`--ameliorer-ponts` : affiche les ponts du réseau qui a été chargé, ainsi que les arêtes à rajouter pour que ces arêtes ne soient plus des ponts.
+`--ameliorer-ponts` : Affiche les ponts du réseau qui a été chargé, ainsi que les arêtes à rajouter pour que ces arêtes ne soient plus des ponts.
 
 ## Pour plus d'informations...
 Se référer au fichier PDF `Énoncé.pdf` pour lire la consigne du projet.
