@@ -3,7 +3,7 @@ Un mini-projet de renforcement de réseau fait en Python.
 
 ## Lancer le code
 Il faut éxécuter le fichier `ameliorations.py`, qui va dépendre du script `graphe.py` pour fonctionner. En effet, `graphe.py` va définir une classe qui va représenter le réseau.
-`ameliorations.py` va utiliser cette classe pour charger les données à partir des fichiers donnés. Elle convertira cette charge de données en une classe réseau. Elle peut également lister la liste des ponts et des points d'articulations et améliorer le réseau pour faire en sorte qu'il n'ait plus de ponts ou de points d'articulation. (Se référer à l'énoncé pour plus de détails à ce sujet).
+`ameliorations.py` va utiliser cette classe pour charger les données à partir des fichiers donnés pour qu'elle puisse convertir cette charge de données en une classe réseau. Elle peut également lister la liste des ponts et des points d'articulations et améliorer le réseau pour faire en sorte qu'il n'ait plus de ponts ou de points d'articulation. (Se référer à l'énoncé pour plus de détails à ce sujet).
 
 ## Options
 Pour mener à bien l'éxécution du fichier `ameliorations.py`, il faut aussi ajouter des options dans la commande d'éxécution:
