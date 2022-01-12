@@ -6,7 +6,7 @@ Il faut éxécuter le fichier `ameliorations.py`, qui va dépendre du script `gr
 `ameliorations.py` va utiliser cette classe pour charger les données à partir des fichiers donnés pour qu'elle puisse convertir cette charge de données en une classe réseau. Elle peut également lister la liste des ponts et des points d'articulations et améliorer le réseau pour faire en sorte qu'il n'ait plus de ponts ou de points d'articulation. (Se référer à l'énoncé pour plus de détails à ce sujet).
 
 ## Options
-Pour mener à bien l'éxécution du fichier `ameliorations.py`, il faut aussi ajouter des options dans la commande d'éxécution:
+Pour mener à bien l'éxécution du fichier `ameliorations.py`, il faut aussi ajouter des options en plus dans la ligne de commande:
 
 `--metro [lignes]` : précise les lignes de métro que l’on veut charger dans le réseau. Le paramètre `lignes` est facultatif : s’il existe, il s’agit des numéros de lignes qui nous intéressent (par exemple : --metro 3b 7 14) ; sinon, on charge toutes les lignes de métro disponibles dans le répertoire courant.
 
