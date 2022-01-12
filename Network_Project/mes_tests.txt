@@ -1,0 +1,85 @@
+Test pour la récupération du nom d'un sommet (nom_sommet):
+
+""" 
+Renvoie le nom d'un sommet pris en paramètre.
+>>> G = Graphe()
+>>> G.ajouter_sommets([(1, "Noisy"), (2, "Bercy"), (3, "Neuilly")])
+>>> G.ajouter_aretes([(1, 2, None), (1, 3, None)])
+>>> liste_noms = []
+>>> for sommet in G.sommets():
+...     liste_noms.append(G.nom_sommet(sommet))
+>>> liste_noms
+['Noisy', 'Bercy', 'Neuilly']
+"""
+
+Test pour le chargement des RER (charger_donnees):
+
+"""
+>>> reseau_rer = Graphe()
+>>> charger_donnees(reseau_rer, "RER_A.txt")
+>>> charger_donnees(reseau_rer, "RER_B.txt")
+    
+>>> sorted(reseau_rer.sommets())
+[1628, 1631, 1636, 1643, 1650, 1651, 1652, 1660, 1663, 1664, 1670, 1671, 1672, 1673, 1680, 1689, 1693, 1697, 1705, 1706, 1713, 1771, 1775, 1776, 1777, 1778, 1801, 1809, 1810, 1821, 1829, 1830, 1831, 1837, 1838, 1839, 1840, 1848, 1850, 1851, 1853, 1859, 1865, 1866, 1878, 1885, 1887, 1894, 1904, 1912, 1914, 1918, 1919, 1921, 1923, 1924, 1941, 1942, 1943, 1955, 1957, 1960, 1967, 1970, 1976, 1983, 1988, 1996, 1999, 2006, 2010, 2011, 2012, 2021, 2022, 2024, 2028, 2039, 2045, 2047, 2053, 2054, 2056, 2059, 2070, 2074, 2078, 48429, 48431, 48433, 161468, 2771311]
+    
+>>> sorted(map(reseau_rer.nom_sommet, reseau_rer.sommets()))
+['Achères Grand Cormier', 'Achères-Ville', 'Antony', 'Arcueil-Cachan', 'Auber', 'Aulnay-sous-Bois', 'Aéroport Charles de Gaulle 1', 'Aéroport Charles de Gaulle 2 TGV', 'Bagneux', 'Blanc-Mesnil', 'Boissy-Saint-Léger', 'Bourg-la-Reine', 'Bry-sur-Marne', 'Bures-sur-Yvette', 'Bussy-Saint-Georges', 'Cergy-Le-Haut', 'Cergy-Préfecture', 'Cergy-Saint-Christophe', 'Champigny', 'Charles de Gaulle-Etoile', 'Chatou-Croissy', 'Châtelet-Les Halles', 'Cité Universitaire', "Conflans-Fin d'Oise", 'Courcelle-sur-Yvette', 'Denfert-Rochereau', 'Drancy', 'Fontaine-Michalon', 'Fontenay-aux-Roses', 'Fontenay-sous-Bois', 'Gare de Lyon', 'Gare du Nord', 'Gentilly', 'Gif-sur-Yvette', 'Houilles Carrières-sur-Seine', 'Joinville-le-Pont', 'La Courneuve-Aubervilliers', 'La Croix-de-Berny', 'La Défense (Grande Arche)', 'La Hacquinière', 'La Plaine-Stade de France', 'La Varenne-Chennevières', 'Laplace', 'Le Bourget', 'Le Guichet', 'Le Parc de Saint-Maur', 'Le Vésinet-Centre', 'Le Vésinet-Le Pecq', 'Les Baconnets', 'Lognes', 'Lozère', 'Luxembourg', 'Maisons-Laffitte', 'Marne-la-Vallée Chessy', 'Massy-Palaiseau', 'Massy-Verrières', 'Mitry-Claye', 'Nanterre-Préfecture', 'Nanterre-Université', 'Nanterre-Ville', 'Nation', 'Neuilly-Plaisance', 'Neuville-Université', 'Nogent-sur-Marne', 'Noisiel', 'Noisy-Champs', "Noisy-le-Grand (Mont d'Est)", 'Orsay-Ville', 'Palaiseau', 'Palaiseau Villebon', 'Parc de Sceaux', 'Parc des Expositions', 'Poissy', 'Port Royal', 'Robinson', 'Rueil-Malmaison', 'Saint-Germain-en-Laye', 'Saint-Maur Créteil', 'Saint-Michel Notre-Dame', 'Saint-Rémy-lès-Chevreuse', 'Sartrouville', 'Sceaux', 'Sevran Livry', 'Sevran-Beaudottes', 'Sucy Bonneuil', 'Torcy', "Val d'europe", 'Val de Fontenay', 'Vert-Galant', 'Villeparisis', 'Villepinte', 'Vincennes']
+    
+>>> sorted(reseau_rer.aretes())  # doctest: +NORMALIZE_WHITESPACE
+[(1628, 1663, 'RER_B'), (1628, 1777, 'RER_B'), (1631, 1651, 'RER_A'), (1631, 1689, 'RER_A'), (1631, 1943, 'RER_A'), (1636, 1859, 'RER_A'), (1636, 2012, 'RER_A'), (1643, 1878, 'RER_A'), (1643, 1894, 'RER_A'), (1650, 1866, 'RER_B'), (1650, 1996, 'RER_B'), (1651, 1955, 'RER_A'), (1652, 1840, 'RER_A'), (1652, 2010, 'RER_A'), (1660, 1942, 'RER_B'), (1660, 2006, 'RER_B'), (1663, 2056, 'RER_B'), (1664, 1693, 'RER_B'), (1664, 2056, 'RER_B'), (1670, 1851, 'RER_A'), (1671, 1848, 'RER_A'), (1671, 1904, 'RER_A'), (1672, 1866, 'RER_B'), (1672, 1967, 'RER_B'), (1673, 1988, 'RER_B'), (1680, 1919, 'RER_A'), (1680, 2074, 'RER_A'), (1689, 1837, 'RER_A'), (1693, 1697, 'RER_B'), (1697, 1821, 'RER_B'), (1705, 1942, 'RER_B'), (1706, 1777, 'RER_B'), (1706, 48431, 'RER_B'), (1713, 1831, 'RER_A'), (1713, 1970, 'RER_A'), (1771, 1924, 'RER_B'), (1771, 2011, 'RER_B'), (1775, 1776, 'RER_B'), (1775, 1809, 'RER_B'), (1776, 1865, 'RER_B'), (1778, 1912, 'RER_B'), (1778, 2006, 'RER_B'), (1801, 2771311, 'RER_A'), (1809, 1810, 'RER_B'), (1810, 1853, 'RER_B'), (1829, 1830, 'RER_A'), (1829, 1887, 'RER_A'), (1829, 1894, 'RER_A'), (1830, 1831, 'RER_A'), (1837, 2010, 'RER_A'), (1838, 1904, 'RER_A'), (1838, 1943, 'RER_A'), (1839, 1840, 'RER_A'), (1839, 1859, 'RER_A'), (1848, 2024, 'RER_A'), (1850, 1851, 'RER_A'), (1850, 1970, 'RER_A'), (1853, 1941, 'RER_B'), (1865, 1924, 'RER_B'), (1878, 2039, 'RER_A'), (1878, 2771311, 'RER_A'), (1885, 161468, 'RER_A'), (1887, 2028, 'RER_A'), (1912, 2045, 'RER_B'), (1914, 2011, 'RER_B'), (1914, 2078, 'RER_B'), (1918, 1957, 'RER_B'), (1918, 2054, 'RER_B'), (1919, 2024, 'RER_A'), (1921, 1960, 'RER_B'), (1921, 2047, 'RER_B'), (1923, 1999, 'RER_B'), (1923, 2054, 'RER_B'), (1941, 2045, 'RER_B'), (1955, 1967, 'RER_A'), (1957, 1967, 'RER_B'), (1960, 1976, 'RER_B'), (1967, 2053, 'RER_A'), (1976, 1996, 'RER_B'), (1983, 2039, 'RER_A'), (1983, 48433, 'RER_A'), (1988, 2078, 'RER_B'), (1999, 2070, 'RER_B'), (2006, 2059, 'RER_B'), (2012, 161468, 'RER_A'), (2021, 2022, 'RER_A'), (2021, 48433, 'RER_A'), (2022, 48429, 'RER_A'), (2028, 2053, 'RER_A'), (2047, 2059, 'RER_B'), (2056, 2070, 'RER_B')]
+"""
+
+Test pour la numérotation des sommets (numerotations):
+
+"""
+>>> G = Graphe()
+>>> charger_donnees(G, "METRO_3b.txt")
+>>> charger_donnees(G, "METRO_7.txt")
+>>> numerotations(G)
+({1925: 1, 2055: 33, 1800: 24, 1674: 28, 1805: 15, 1806: 17, 1911: 35, 1808: 3, 1681: 14, 1685: 8, 1944: 34, 1695: 38, 2080: 30, 1696: 37, 1953: 25, 2085: 26, 1703: 29, 1964: 16, 1971: 21, 1718: 39, 1846: 20, 1849: 22, 1854: 10, 1985: 31, 1860: 27, 1734: 5, 1740: 4, 1871: 7, 1744: 32, 1876: 2, 1752: 40, 1757: 19, 2015: 23, 2020: 11, 1639: 36, 1773: 18, 1648: 9, 1649: 12, 1907: 13, 1783: 41, 1659: 42, 1790: 6}, {1925: None, 2055: 1744, 1800: 2015, 1674: 1860, 1805: 1681, 1806: 1964, 1911: 1944, 1808: 1876, 1681: 1907, 1685: 1876, 1944: 2055, 1695: 1696, 2080: 1703, 1696: 1639, 1953: 1800, 2085: 1953, 1703: 1674, 1964: 1805, 1971: 1846, 1718: None, 1846: 1757, 1849: 1971, 1854: 1648, 1985: 2080, 1860: 2085, 1734: 1740, 1740: 1808, 1871: 1790, 1744: 1985, 1876: 1925, 1752: 1718, 1757: 1773, 2015: 1849, 2020: 1854, 1639: 1925, 1773: 1806, 1648: 1685, 1649: 2020, 1907: 1649, 1783: 1718, 1659: 1783, 1790: 1734}, {1925: 1, 2055: 33, 1800: 24, 1674: 28, 1805: 15, 1806: 17, 1911: 35, 1808: 3, 1681: 14, 1685: 8, 1944: 34, 1695: 38, 2080: 30, 1696: 37, 1953: 25, 2085: 26, 1703: 29, 1964: 16, 1971: 21, 1718: 39, 1846: 20, 1849: 22, 1854: 10, 1985: 31, 1860: 27, 1734: 5, 1740: 4, 1871: 7, 1744: 32, 1876: 2, 1752: 40, 1757: 19, 2015: 23, 2020: 11, 1639: 36, 1773: 18, 1648: 9, 1649: 12, 1907: 13, 1783: 41, 1659: 42, 1790: 6})
+
+"""
+
+Test pour les points d'articulations de deux lignes d'RER (points_articulation):
+
+"""
+>>> G_RER = Graphe()
+>>> charger_donnees(G_RER, "RER_A.txt")
+>>> charger_donnees(G_RER, "RER_B.txt")
+>>> sorted(points_articulation(G_RER))
+[1628, 1631, 1636, 1643, 1650, 1651, 1652, 1660, 1663, 1664, 1671, 1672, 1680, 1689, 1693, 1697, 1706, 1713, 1771, 1775, 1776, 1777, 1778, 1809, 1810, 1829, 1830, 1831, 1837, 1838, 1839, 1840, 1848, 1850, 1851, 1853, 1859, 1865, 1866, 1878, 1887, 1894, 1904, 1912, 1914, 1918, 1919, 1921, 1923, 1924, 1941, 1942, 1943, 1955, 1957, 1960, 1967, 1970, 1976, 1983, 1988, 1996, 1999, 2006, 2010, 2011, 2012, 2021, 2022, 2024, 2028, 2039, 2045, 2047, 2053, 2054, 2056, 2059, 2070, 2078, 48433, 161468, 2771311]
+"""
+
+Test pour les ponts de deux lignes d'RER (ponts):
+
+"""
+>>> G_RER = Graphe()
+>>> charger_donnees(G_RER, "RER_A.txt")
+>>> charger_donnees(G_RER, "RER_B.txt")
+>>> sorted(map(sorted, ponts(G_RER)))
+[[1628, 1663], [1628, 1777], [1631, 1651], [1631, 1689], [1631, 1943], [1636, 1859], [1636, 2012], [1643, 1878], [1643, 1894], [1650, 1866], [1650, 1996], [1651, 1955], [1652, 1840], [1652, 2010], [1660, 1942], [1660, 2006], [1663, 2056], [1664, 1693], [1664, 2056], [1670, 1851], [1671, 1848], [1671, 1904], [1672, 1866], [1672, 1967], [1673, 1988], [1680, 1919], [1680, 2074], [1689, 1837], [1693, 1697], [1697, 1821], [1705, 1942], [1706, 1777], [1706, 48431], [1713, 1831], [1713, 1970], [1771, 1924], [1771, 2011], [1775, 1776], [1775, 1809], [1776, 1865], [1778, 1912], [1778, 2006], [1801, 2771311], [1809, 1810], [1810, 1853], [1829, 1830], [1829, 1887], [1829, 1894], [1830, 1831], [1837, 2010], [1838, 1904], [1838, 1943], [1839, 1840], [1839, 1859], [1848, 2024], [1850, 1851], [1850, 1970], [1853, 1941], [1865, 1924], [1878, 2039], [1878, 2771311], [1885, 161468], [1887, 2028], [1912, 2045], [1914, 2011], [1914, 2078], [1918, 1957], [1918, 2054], [1919, 2024], [1921, 1960], [1921, 2047], [1923, 1999], [1923, 2054], [1941, 2045], [1955, 1967], [1957, 1967], [1960, 1976], [1967, 2053], [1976, 1996], [1983, 2039], [1983, 48433], [1988, 2078], [1999, 2070], [2006, 2059], [2012, 161468], [2021, 2022], [2021, 48433], [2022, 48429], [2028, 2053], [2047, 2059], [2056, 2070]]
+"""
+
+Test pour l'amélioration des points d'articulations de deux lignes d'RER (amélioration_points_articulation):
+
+"""
+>>> G_RER = Graphe()
+>>> charger_donnees(G_RER, "RER_A.txt")
+>>> charger_donnees(G_RER, "RER_B.txt")
+>>> for u, v in amelioration_points_articulation(G_RER):
+...     G_RER.ajouter_arete(u, v, None)
+>>> len(points_articulation(G_RER))
+0
+"""
+
+Test pour l'amélioration des ponts de deux lignes d'RER (amélioration_ponts):
+
+"""
+>>> G_RER = Graphe()
+>>> charger_donnees(G_RER, "RER_A.txt")
+>>> charger_donnees(G_RER, "RER_B.txt")
+>>> for u, v in amelioration_ponts(G_RER):
+...     G_RER.ajouter_arete(u, v, None)
+>>> len(ponts(G_RER))
+0
+"""
